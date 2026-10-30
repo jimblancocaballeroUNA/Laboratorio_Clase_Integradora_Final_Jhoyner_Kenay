@@ -41,7 +41,7 @@ public class ValidacionBasica
          * Utilice el depurador para identificarlo.
          */
         if (reserva.getHoraInicio()
-                < reserva.getHoraFinal()) {
+                >= reserva.getHoraFinal()) {
 
             throw new ReservaInvalidaException(
                     "La hora final debe ser posterior "
