@@ -9,6 +9,8 @@ import cr.ac.una.reservas.service.ReservaService;
 import cr.ac.una.reservas.strategy.ValidacionBasica;
 import cr.ac.una.reservas.strategy.ValidacionCapacidad;
 import cr.ac.una.reservas.strategy.ValidacionHorarioPermitido;
+import cr.ac.una.reservas.observer.ResumenObserver;
+
 public class App {
 
     public static void main(String[] args) {
@@ -28,9 +30,13 @@ public class App {
                 new ValidacionHorarioPermitido()
         );
 
-        service.agregarObserver(
-                new ConsolaObserver()
-        );
+       service.agregarObserver(
+        new ConsolaObserver()
+);
+
+service.agregarObserver(
+        new ResumenObserver()
+);
 
         Reserva reserva =
                 new Reserva(
